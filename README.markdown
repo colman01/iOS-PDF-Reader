@@ -1,6 +1,6 @@
 # iOS PDF Reader
 
-A UIView subclass (and friends) for displaying PDFs in yoru apps.
+A UIView subclass (and friends) for displaying PDFs in your apps.
 
 ## License
 
