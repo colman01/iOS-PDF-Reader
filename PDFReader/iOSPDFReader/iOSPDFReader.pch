@@ -1,0 +1,7 @@
+#ifndef iOSPDFReader_pch
+#define iOSPDFReader_pch
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+#endif
