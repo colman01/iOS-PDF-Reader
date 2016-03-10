@@ -60,6 +60,7 @@
 		C57985EB1C91894D00D104C9 /* CContentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45454DF01558429B004AC470 /* CContentScrollView.m */; };
 		C57985EC1C91894D00D104C9 /* CFadelessTiledLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F9FAF91582D495004D267B /* CFadelessTiledLayer.m */; };
 		C57985ED1C91894D00D104C9 /* Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 455699E415507148009E52FE /* Geometry.m */; };
+		C57985F11C91910C00D104C9 /* CPDFDocumentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 455699C615507141009E52FE /* CPDFDocumentViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -325,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C57985D51C9187E300D104C9 /* iOSPDFReader.h in Headers */,
+				C57985F11C91910C00D104C9 /* CPDFDocumentViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
