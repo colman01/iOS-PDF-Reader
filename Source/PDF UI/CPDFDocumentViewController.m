@@ -153,6 +153,8 @@
 
     // #########################################################################
 
+  [self addPreviewCollectionView];
+        
     self.previewCollectionView.dataSource = self;
     self.previewCollectionView.delegate = self;
 
@@ -181,6 +183,60 @@
 
     [theSingleTapGestureRecognizer requireGestureRecognizerToFail:theDoubleTapGestureRecognizer];
     }
+
+
+- (void)addPreviewCollectionView {
+    // layout
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    layout.itemSize = CGSizeMake(95, 134);
+    
+    //collection view
+    _previewCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 824, 768, 140) collectionViewLayout:layout];
+    self.previewCollectionView.backgroundColor = [UIColor blackColor];
+    [self.previewCollectionView registerClass:[CPreviewCollectionViewCell class] forCellWithReuseIdentifier:@"CELL"];
+    [self.view addSubview:_previewCollectionView];
+    
+    self.previewCollectionView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addConstraints:@[
+                                
+                                [NSLayoutConstraint constraintWithItem:self.previewCollectionView
+                                                             attribute:NSLayoutAttributeLeft
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:self.view
+                                                             attribute:NSLayoutAttributeLeft
+                                                            multiplier:1.0
+                                                              constant:0],
+                                
+                                
+                                [NSLayoutConstraint constraintWithItem:self.previewCollectionView
+                                                             attribute:NSLayoutAttributeRight
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:self.view
+                                                             attribute:NSLayoutAttributeRight
+                                                            multiplier:1.0
+                                                              constant:0],
+                                
+                                [NSLayoutConstraint constraintWithItem:self.previewCollectionView
+                                                             attribute:NSLayoutAttributeBottom
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:self.view
+                                                             attribute:NSLayoutAttributeBottom
+                                                            multiplier:1.0
+                                                              constant:0],
+                                
+                                
+                                [NSLayoutConstraint constraintWithItem:self.previewCollectionView
+                                                             attribute:NSLayoutAttributeHeight
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:nil
+                                                             attribute:NSLayoutAttributeNotAnAttribute
+                                                            multiplier:1.0
+                                                              constant:140.0]
+                                
+                                
+                                ]];
+}
 
 - (void)viewWillAppear:(BOOL)animated
     {

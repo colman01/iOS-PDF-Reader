@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface CPreviewCollectionViewCell : UICollectionViewCell
-@property (readonly, nonatomic, weak) IBOutlet UIImageView *imageView;
+@property (nonatomic) UIImageView *imageView;
 @end

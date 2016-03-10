@@ -10,6 +10,21 @@
 
 @implementation CPreviewCollectionViewCell
 
-@synthesize imageView = _imageView;
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        
+        // size
+        self.frame = CGRectMake(0, 0, 95, 134);
+        
+        // image view
+        self.imageView = [[UIImageView alloc] init];
+        self.imageView.frame = self.frame;
+        self.imageView.contentMode = UIViewContentModeScaleAspectFill;
+        [self.viewForBaselineLayout addSubview:self.imageView];
+    }
+    return self;
+}
 
 @end
