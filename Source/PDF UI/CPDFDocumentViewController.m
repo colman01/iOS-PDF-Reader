@@ -138,8 +138,10 @@
     self.scrollView.maximumZoomScale = [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone ? 8.0 : 4.0;
     self.scrollView.delegate = self;
     [self.scrollView addSubview:self.scrollView.contentView];
+    self.scrollView.scrollEnabled = NO;
     [self.view insertSubview:self.scrollView atIndex:0];
 
+        
 
     NSDictionary *theViews = @{
         @"scrollView": self.scrollView,
