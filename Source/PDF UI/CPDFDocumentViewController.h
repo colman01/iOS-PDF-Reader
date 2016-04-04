@@ -46,5 +46,6 @@
 @property (readwrite, nonatomic, assign) BOOL magazineMode;
 
 - (BOOL)openPage:(CPDFPage *)inPage;
+- (void)setDcoumentTitle:(NSString *)documentTitle;
 
 @end

@@ -92,13 +92,15 @@
         }
     }
 
+- (void)setDcoumentTitle:(NSString *)documentTitle {
+    self.title = documentTitle;
+}
+
 #pragma mark -
 
 - (void)viewDidLoad
     {
     [super viewDidLoad];
-
-    [self updateTitle];
 
     // #########################################################################
 
@@ -273,7 +275,6 @@
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
     {
-    [self updateTitle];
     [self.renderedPageCache removeAllObjects];
     [self populateCache];
     }
@@ -299,36 +300,6 @@
         } completion:^(BOOL finished) {
         self.chromeHidden = !self.chromeHidden;
         }];
-    }
-
-- (void)updateTitle
-    {
-    NSArray *theViewControllers = self.pageViewController.viewControllers;
-    if (theViewControllers.count == 1)
-        {
-        CPDFPageViewController *theFirstViewController = theViewControllers[0];
-        if (theFirstViewController.page.pageNumber == 1)
-            {
-            self.title = self.document.title;
-            }
-        else
-            {
-            self.title = [NSString stringWithFormat:@"Page %d", theFirstViewController.page.pageNumber];
-            }
-        }
-    else if (theViewControllers.count == 2)
-        {
-        CPDFPageViewController *theFirstViewController = theViewControllers[0];
-        if (theFirstViewController.page.pageNumber == 1)
-            {
-            self.title = self.document.title;
-            }
-        else
-            {
-            CPDFPageViewController *theSecondViewController = theViewControllers[1];
-            self.title = [NSString stringWithFormat:@"Pages %d-%d", theFirstViewController.page.pageNumber, theSecondViewController.page.pageNumber];
-            }
-        }
     }
 
 - (void)resizePageViewControllerForOrientation:(UIInterfaceOrientation)inOrientation
@@ -429,7 +400,6 @@
     UIPageViewControllerNavigationDirection theDirection = inPage.pageNumber > theCurrentPageViewController.pageNumber ? UIPageViewControllerNavigationDirectionForward : UIPageViewControllerNavigationDirectionReverse;
 
     [self.pageViewController setViewControllers:theViewControllers direction:theDirection animated:YES completion:NULL];
-    [self updateTitle];
     
     [self populateCache];
 
@@ -561,7 +531,6 @@
 
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed;
     {
-    [self updateTitle];
     [self populateCache];
     [self hideChrome];
 
