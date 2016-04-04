@@ -92,7 +92,7 @@
         }
     }
 
-- (void)setDcoumentTitle:(NSString *)documentTitle {
+- (void)setDocumentTitle:(NSString *)documentTitle {
     self.title = documentTitle;
 }
 
