@@ -197,7 +197,7 @@
     
     //collection view
     _previewCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 824, 768, 140) collectionViewLayout:layout];
-    self.previewCollectionView.backgroundColor = [UIColor blackColor];
+    self.previewCollectionView.backgroundColor = UIColor.whiteColor;
     [self.previewCollectionView registerClass:[CPreviewCollectionViewCell class] forCellWithReuseIdentifier:@"CELL"];
     [self.view addSubview:_previewCollectionView];
     
