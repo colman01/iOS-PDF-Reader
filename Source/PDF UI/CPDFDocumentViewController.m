@@ -143,7 +143,8 @@
     self.scrollView.scrollEnabled = NO;
     [self.view insertSubview:self.scrollView atIndex:0];
 
-        
+    self.scrollView.contentInset=UIEdgeInsetsMake(-64,0,0,0);
+
 
     NSDictionary *theViews = @{
         @"scrollView": self.scrollView,
