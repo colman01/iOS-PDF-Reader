@@ -189,6 +189,9 @@
     [theSingleTapGestureRecognizer requireGestureRecognizerToFail:theDoubleTapGestureRecognizer];
     }
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
 
 - (void)addPreviewCollectionView {
     // layout
