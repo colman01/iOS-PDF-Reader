@@ -322,6 +322,7 @@
 
     self.pageViewController.view.frame = theFrame;
     
+        /*
     // Show fancy shadow if PageViewController view is smaller than parent view
     if (CGRectContainsRect(self.view.frame, self.pageViewController.view.frame) && CGRectEqualToRect(self.view.frame, self.pageViewController.view.frame) == NO)
         {
@@ -331,11 +332,13 @@
         theLayer.shadowColor = [[UIColor blackColor] CGColor];
         theLayer.shadowOpacity = 0.75f;
         theLayer.shadowOffset = CGSizeZero;
+       
         }
     else
         {
         self.pageViewController.view.layer.shadowOpacity = 0.0f;
         }
+         */
     }
 
 #pragma mark -
