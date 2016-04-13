@@ -30,11 +30,7 @@
 - (void)setSelected:(BOOL)selected {
     [super setSelected:selected];
     self.layer.backgroundColor = [UIColor blackColor].CGColor;
-    if(selected) {
-        self.layer.borderWidth = 2.0;
-    } else {
-        self.layer.borderWidth = 0.0;
-    }
+    self.layer.borderWidth = selected ? 2.0 : 0.0;
 }
 
 @end
