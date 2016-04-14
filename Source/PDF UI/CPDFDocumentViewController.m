@@ -257,6 +257,11 @@
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [self populateCache];
         [self.document startGeneratingThumbnails];
+        
+        // select first cell. Both things are required to get the correct behaviour.
+        UICollectionViewCell *cell = [self.previewCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        [cell setSelected:YES];
+        [self.previewCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:nil];
         });
     }
 
