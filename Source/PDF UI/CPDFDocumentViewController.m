@@ -507,7 +507,7 @@
         return(NULL);
         }
 
-    if (theNextPageNumber == 0 && UIInterfaceOrientationIsPortrait(self.interfaceOrientation))
+    if (theNextPageNumber == 0 /*&& UIInterfaceOrientationIsPortrait(self.interfaceOrientation)*/)
         {
         return(NULL);
         }
