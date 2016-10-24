@@ -614,8 +614,16 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
     {
     CPreviewCollectionViewCell *theCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CELL" forIndexPath:indexPath];
-    UIImage *theImage = [self.document pageForPageNumber:indexPath.item + 1].thumbnail;
-    theCell.imageView.image = theImage;
+   
+        // try to find a cached thumbnail
+        UIImage *theImage = [self.document pageForPageNumber:indexPath.item + 1].thumbnail;
+        
+        // if none available we show a placeholder
+        if (!theImage) {
+            theImage = [UIImage imageNamed:@"Placeholder.png"];
+        }
+        
+        theCell.imageView.image = theImage;
     return(theCell);
     }
 
