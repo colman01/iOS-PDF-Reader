@@ -78,6 +78,7 @@
     _documentURL = documentURL;
     CPDFDocument *theDocument = [[CPDFDocument alloc] initWithURL:documentURL];
     self.document = theDocument;
+    theDocument.delegate = self;
     }
 
 
