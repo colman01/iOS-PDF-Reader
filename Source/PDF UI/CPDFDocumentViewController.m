@@ -629,8 +629,8 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
     {
-    CPDFPage *thePage = [self.document pageForPageNumber:indexPath.item + 1];
-    [self openPage:thePage];
+        CPDFPage *thePage = indexPath.item % 2 == 0 ? [self.document pageForPageNumber:indexPath.item] : [self.document pageForPageNumber:indexPath.item + 1];
+        [self openPage:thePage];
     }
 
 #pragma mark -
